@@ -1,0 +1,95 @@
+<div fxLayout="row" fxLayoutWrap="wrap">
+
+    <div fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
+
+        <mat-card>
+
+            <mat-card-header>
+                <div fxLayout="row" fxLayoutWrap="wrap">
+                    <h1>Manage Products</h1>
+
+                </div>
+            </mat-card-header>
+            <mat-card-subtitle>
+                <div fxLayout="row" fxLayoutWrap="wrap">
+                    <div fxFlex="72">
+                        <button id="button-adjust" (click)="openDialog()" mat-stroked-button color="primary">Add New
+                            Product</button>
+                    </div>
+                    <div fxFlex="2" class="m-t-15">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </div>
+                    <div fxFlex="23">
+                        <mat-form-field class="m-r-30">
+                            <input matInput placeholder="Search Product">
+                        </mat-form-field>
+                    </div>
+
+
+                </div>
+
+            </mat-card-subtitle>
+
+            <mat-card-content>
+                <div fxFlex="100">
+                    <table mat-table [dataSource]="dataSource" class="mat-elevatioqn-z8">
+
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef> ID </th>
+                            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                        </ng-container>
+
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="imageUrl">
+                            <th class='text-center' mat-header-cell *matHeaderCellDef> Image </th>
+                            <td mat-cell *matCellDef="let element"> <img [src]="element.imageUrl"> </td>
+                        </ng-container>
+
+                        <!-- Weight Column -->
+                        <ng-container matColumnDef="name">
+                            <th mat-header-cell *matHeaderCellDef> Product Name </th>
+                            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        </ng-container>
+
+                        <!-- Symbol Column -->
+                        <ng-container matColumnDef="description">
+                            <th class='text-center' mat-header-cell *matHeaderCellDef> Description </th>
+                            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="price">
+                            <th class='text-center' mat-header-cell *matHeaderCellDef> Price </th>
+                            <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="option">
+                            <th class='text-center' mat-header-cell *matHeaderCellDef> Options</th>
+                            <td mat-cell *matCellDef="let element">
+
+
+                                <button mat-stroked-button color="primary">Update</button> &nbsp;
+                                <button mat-stroked-button color="warn"> Delete</button> </td>
+                        </ng-container>
+                        <ng-container matColumnDef="status">
+                            <th class='text-center' mat-header-cell *matHeaderCellDef> Status </th>
+                            <td mat-cell *matCellDef="let element">
+                                <section class="example-section">
+                                    <mat-slide-toggle class="example-margin" class="m-l-20" [color]="color"
+                                        [checked]="checked" [disabled]="disabled">
+                                        Active
+                                    </mat-slide-toggle>
+                                </section>
+                            </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                    </table>
+                </div>
+
+            </mat-card-content>
+
+
+
+        </mat-card>
+    </div>
+</div>

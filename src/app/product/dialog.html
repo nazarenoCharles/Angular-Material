@@ -1,0 +1,28 @@
+<div mat-dialog-content>
+    <h2>Add New Product</h2>
+</div>
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance="outline">
+        <input matInput placeholder="Product ID" value="1001" disabled>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+        <input matInput placeholder="Product Name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+        <input matInput placeholder="Description">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+        <input matInput placeholder="Price">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+        <input matInput placeholder="Image URL">
+    </mat-form-field>
+
+</form>
+<div>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onNoClick()">Add Product</button>
+    <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
+</div>
